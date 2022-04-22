@@ -1,6 +1,8 @@
 # ToDo
 App to manage unsolved tasks
 
+![ToDo screenshot](./Graphics/ToDo_screenshot.png)
+
 ## Target Framework
 net5.0-windows
 
