@@ -1,0 +1,255 @@
+﻿<Window x:Class="ToDo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDo"
+        mc:Ignorable="d"
+        Title="ToDo-Listen" Height="570" Width="955" Closing="Window_Closing" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        Background="#333">
+    <Grid>
+        <Label 
+            Content="Listen" 
+            FontSize="18" 
+            FontWeight="Bold" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="10,10,0,0" 
+            VerticalAlignment="Top"
+            Foreground="#ddd"/>
+
+        <ListBox 
+            Name="ListBoxLists"
+            Height="400" 
+            Width="200"
+            FontSize="16"
+            FontFamily="Poppins" 
+            FontWeight="Normal" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="10,41,0,0" 
+            SelectionChanged="ListBoxLists_SelectionChanged"
+            IsSynchronizedWithCurrentItem="True"
+            BorderThickness="0"
+            Padding="-1"/>
+
+        <Button
+            Content="Hinzufügen"
+            Height="30"
+            Width="90"
+            FontFamily="Poppins"
+            FontWeight="DemiBold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="15,450,0,0" 
+            BorderThickness="0"
+            Background="#fff"
+            Click="AddList_Click"/>
+
+        <Button
+            Name="ButtonRemoveList"
+            Content="Entfernen"
+            Height="30"
+            Width="90"
+            FontFamily="Poppins"
+            FontWeight="DemiBold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="115,450,0,0" 
+            BorderThickness="0"
+            Background="#fff"
+            Click="RemoveList_Click"/>
+
+        <Button
+            Name="ButtonEditList"
+            Content="Umbenennen"
+            Height="30"
+            Width="90"
+            FontFamily="Poppins"
+            FontWeight="DemiBold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="15,490,0,0" 
+            BorderThickness="0"
+            Background="#fff"
+            Click="EditList_Click"/>
+
+
+
+        <Label 
+            Content="Aufgaben" 
+            FontSize="18" 
+            FontWeight="Bold" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="220,10,0,0" 
+            VerticalAlignment="Top"
+            Foreground="#ddd"/>
+
+        <ListBox 
+            Name="ListBoxTasks"
+            Height="400" 
+            Width="350" 
+            FontSize="16"
+            FontFamily="Poppins" 
+            FontWeight="Normal"
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="220,41,0,0"
+            SelectionChanged="ListBoxTasks_SelectionChanged"
+            IsSynchronizedWithCurrentItem="True"
+            BorderThickness="0"
+            Padding="-1"/>
+
+        <Button
+            Content="Hinzufügen"
+            Height="30"
+            Width="90"
+            FontFamily="Poppins"
+            FontWeight="DemiBold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="225,450,0,0" 
+            BorderThickness="0"
+            Background="#fff"
+            Click="AddTask_Click"/>
+
+        <Button
+            Name="ButtonRemoveTask"
+            Content="Entfernen"
+            Height="30"
+            Width="90"
+            FontFamily="Poppins"
+            FontWeight="DemiBold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="325,450,0,0" 
+            BorderThickness="0"
+            Background="#fff"
+            Click="RemoveTask_Click"/>
+
+        <CheckBox 
+            Name="CheckBoxShowFinishedTasks"
+            Content="Erledigte anzeigen"
+            Height="30"
+            HorizontalAlignment="Left" 
+            FontSize="12"
+            FontFamily="Poppins"
+            Margin="425,450,0,0" 
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            FontWeight="DemiBold"
+            Foreground="#ddd"
+            Checked="ShowFinishedTasks_Checked"
+            Unchecked="ShowFinishedTasks_Unchecked" />
+
+        
+
+        <Label 
+            Content="Beschreibung" 
+            FontSize="18" 
+            FontWeight="Bold" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="580,10,0,0" 
+            VerticalAlignment="Top"
+            Foreground="#ddd"/>
+
+        <Label 
+            Content="Name" 
+            FontSize="12" 
+            FontWeight="DemiBold" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="580,40,0,0" 
+            VerticalAlignment="Top"
+            Foreground="#ddd"/>
+
+        <TextBox 
+            Name="TextBoxTaskName"
+            Height="30"
+            Width="350"
+            FontSize="16"
+            VerticalContentAlignment="Center"
+            Padding="5,0,0,0"
+            FontWeight="Regular" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="580,60,0,0"/>
+
+        <Label 
+            Content="Notiz" 
+            FontSize="12" 
+            FontWeight="DemiBold" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="580,100,0,0" 
+            VerticalAlignment="Top"
+            Foreground="#ddd"/>
+
+        <TextBox 
+            Name="TextBoxTaskNote"
+            FontSize="14"
+            FontWeight="Regular" 
+            FontFamily="Poppins" 
+            Padding="5,3,3,0"
+            Height="280"
+            Width="350"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="580,120,0,0" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="WrapWithOverflow"/>
+
+        <Label 
+            Content="Letzte Änderung:" 
+            Height="30"
+            FontSize="9" 
+            FontWeight="Light" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="580,410,0,0" 
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            Foreground="#ddd"/>
+
+        <Label 
+            Name="LabelTaskLastChanged"
+            Height="30"
+            FontSize="9" 
+            FontWeight="Light" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="660,410,0,0" 
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            Foreground="#ddd"/>
+
+        <CheckBox 
+            Name="CheckBoxTaskFinished"
+            Content="Erledigt" 
+            Height="30"
+            HorizontalAlignment="Left" 
+            FontSize="12"
+            FontWeight="DemiBold"
+            FontFamily="Poppins"
+            Margin="840,410,0,0" 
+            VerticalAlignment="Top"
+            VerticalContentAlignment="Center"
+            Foreground="#ddd"/>
+
+        <Button
+            Name="ButtonEditTask"
+            Content="Änderungen übernehmen"
+            Height="30"
+            Width="170"
+            FontFamily="Poppins"
+            FontWeight="DemiBold"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="755,450,0,0" 
+            BorderThickness="0"
+            Background="#fff"
+            Click="EditTask_Click"/>
+
+    </Grid>
+</Window>

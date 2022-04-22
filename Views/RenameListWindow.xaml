@@ -1,0 +1,54 @@
+﻿<Window x:Class="ToDo.Views.RenameListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDo.Views"
+        mc:Ignorable="d"
+        Title="Aufgabenliste umbenennen" Height="150" Width="335" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label 
+            Content="Name" 
+            FontSize="12" 
+            FontWeight="Black" 
+            FontFamily="Poppins" 
+            HorizontalAlignment="Left" 
+            Margin="10,10,0,0" 
+            VerticalAlignment="Top"/>
+
+        <TextBox 
+            Name="TextBoxName"
+            Height="30"
+            Width="300"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,30,0,0"
+            FontSize="18"
+            FontWeight="DemiBold"
+            Padding="3,1,0,0"
+            Text ="{Binding ListName, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Button
+            Content="Abbrechen"
+            Height="30"
+            Width="140"
+            FontFamily="Poppins"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="15,70,0,0"
+            IsCancel="true"
+            Click="Cancel_Click"/>
+
+        <Button
+            Content="Übernehmen"
+            Height="30"
+            Width="140"
+            FontFamily="Poppins"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="165,70,0,0" 
+            IsDefault="True"
+            Click="Change_Click"/>
+
+    </Grid>
+</Window>
