@@ -10,4 +10,4 @@ net5.0-windows
 win-x64
 
 # How to use
-Just download the actual [setup file](./Setup/ToDoSetup/ToDo_setup_1.0.0.0.exe) and run the installer.
+Just download the actual [setup file](./Setup/ToDoSetup/ToDo_setup_1.0.1.0.exe) and run the installer.

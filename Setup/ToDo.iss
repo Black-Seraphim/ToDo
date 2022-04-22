@@ -4,7 +4,7 @@
 #include "CodeDependencies.iss"
 
 #define MyAppName "ToDo"
-#define MyAppVersion "1.0.0.0"
+#define MyAppVersion "1.0.1.0"
 #define MyAppPublisher "BlackSeraphim"
 #define MyAppURL "https://www.hetfeld.name/"
 #define MyAppExeName "ToDo.exe"

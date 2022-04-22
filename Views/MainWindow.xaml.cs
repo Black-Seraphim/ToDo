@@ -95,6 +95,18 @@ namespace ToDo.Views
             ListBoxItem listBoxItem = (ListBoxItem)ListBoxLists.SelectedItem;
             ToDoList toDoList = Model.ToDoLists
                 .FirstOrDefault(toDoLists => toDoLists.Id == Guid.Parse(listBoxItem.Uid));
+
+            bool listHasUnfinishedTasks = toDoList.ToDoTasks.Where(toDoTask => !toDoTask.Finished).Any();
+
+            if (listHasUnfinishedTasks)
+            {
+                MessageBoxResult contentShouldBeDeleted = MessageBox.Show("Die Liste hat noch unerledigte Aufgaben, soll sie wirklich gelöscht werden?", "Liste wirklich löschen?", MessageBoxButton.YesNo);
+                if (contentShouldBeDeleted != MessageBoxResult.Yes)
+                {
+                    return;
+                }
+            }
+
             _ = Model.ToDoLists.Remove(toDoList);
             RefreshToDoLists();
 
